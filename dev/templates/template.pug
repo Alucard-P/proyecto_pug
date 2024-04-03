@@ -1,0 +1,10 @@
+doctype html 
+html 
+  block config
+    include ../config/config
+  head 
+    meta(charset="utf-8")
+    block head
+      title= page_title + " | " + page
+      each link in css
+        link(rel="stylesheet" href="css/"+link)

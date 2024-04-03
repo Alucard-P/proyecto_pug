@@ -5,6 +5,18 @@ const gulp = require("gulp"),
   autoprefixer = require("gulp-autoprefixer"),
   server = require("browser-sync").create();
 
+function compilePug() {
+  return gulp
+    .src("dev/pug/*.pug")
+    .pipe(pug({ pretty: true }))
+    .pipe(gulp.dest("./public/"))
+    .on("end", server.reload);
+}
+
+gulp.task("reload", () => {
+  server.reload();
+});
+
 function buildStyles() {
   return gulp
     .src("dev/scss/*.scss")
@@ -19,46 +31,15 @@ function buildStyles() {
     .pipe(server.stream());
 }
 
-function compilePug() {
-  return gulp
-    .src("dev/pug/*.pug")
-    .pipe(pug({ pretty: true }))
-    .pipe(gulp.dest("./public/"));
-}
-// gulp.task("pug", () => {
-//   return gulp
-//     .src("dev/pug/*.pug")
-//     .pipe(pug({ pretty: true }))
-//     .pipe(gulp.dest("./public/"));
-// });
+gulp.task("default", () => {
+  server.init({
+    server: "public/",
+  });
 
-gulp.task("reload", () => {
-  server.reload;
+  gulp.watch("dev/**/*.pug", gulp.series(compilePug, "reload"));
+  gulp.watch("dev/scss/**/*.scss", buildStyles); // Ejecuta buildStyles y luego reload
+  gulp.watch("public/index.html").on("change", server.reload);
 });
 
 exports.compilePug = compilePug;
 exports.buildStyles = buildStyles;
-
-// exports.watch = function () {
-//   gulp.watch("dev/scss/**/*.scss", ["sass"]);
-//   gulp.watch("dev/pug/**/*.pug", ["pug", "reload"]);
-// };
-
-// gulp.task("default", () => {
-//   server.init({
-//     server: "./public/",
-//   });
-//   gulp.watch("dev/pug/**/*.pug", ["pug", "reload"]);
-//   gulp.watch("dev/scss/**/*.scss", ["sass"]);
-//   gulp.watch("public/index.html", server.reload);
-// });
-
-gulp.task("default", () => {
-  server.init({
-    server: "./public/",
-  });
-
-  gulp.watch("dev/pug/**/*.pug", compilePug);
-  gulp.watch("dev/scss/**/*.scss", buildStyles);
-  gulp.watch("public/index.html").on("change", server.reload);
-});
