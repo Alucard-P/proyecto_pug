@@ -8,3 +8,14 @@ html
       title= page_title + " | " + page
       each link in css
         link(rel="stylesheet" href="css/"+link)
+  body 
+    block header 
+      include ../blocks/header
+    block banner 
+      img(src="/res/banners/" + pagina_actual+".jpg", alt="Banner")
+    block nosotros
+    block destinos_elegidos
+    block clientes 
+    block footer
+      include ../blocks/footer
+  

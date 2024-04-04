@@ -36,8 +36,8 @@ gulp.task("default", () => {
     server: "public/",
   });
 
-  gulp.watch("dev/**/*.pug", gulp.series(compilePug, "reload"));
-  gulp.watch("dev/scss/**/*.scss", buildStyles); // Ejecuta buildStyles y luego reload
+  gulp.watch("dev/**/*.pug", compilePug);
+  gulp.watch("dev/scss/**/*.scss", buildStyles);
   gulp.watch("public/index.html").on("change", server.reload);
 });
 
