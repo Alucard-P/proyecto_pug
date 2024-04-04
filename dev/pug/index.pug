@@ -1,3 +1,51 @@
 extends ../templates/template
 block append config
   - pagina_actual = "inicio"
+block nosotros  
+  .nosotros 
+    .nosotros__item
+      img(src="/res/trayectoria.svg", alt="trayectoria")
+      h1.nosotros__title TRAYECTORIA
+      p.nosotros__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolore nobis id corrupti temporibus illo labore dicta repellendus eos, omnis quae praesentium ratione. Tenetur sequi incidunt sed cumque. Totam, modi?
+      a.nosotros__button(href="#") Mas Info
+
+    .nosotros__item
+      img(src="/res/world.svg", alt="world")
+      h1.nosotros__title DESTINOS
+      p.nosotros__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolore nobis id corrupti temporibus illo labore dicta repellendus eos, omnis quae praesentium ratione. Tenetur sequi incidunt sed cumque. Totam, modi?
+      a.nosotros__button(href="#") Elegir Destino
+
+    .nosotros__item
+      img(src="/res/packs.svg", alt="packs")
+      h1.nosotros__title PAQUETES
+      p.nosotros__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolore nobis id corrupti temporibus illo labore dicta repellendus eos, omnis quae praesentium ratione. Tenetur sequi incidunt sed cumque. Totam, modi?
+      a.nosotros__button(href="#") Ver Paquetes
+block destinos_elegidos
+  .destinos_elegidos
+    h1.destinos__title LOS DESTINOS MAS ELEGIDOS 
+    .destinos__item
+      img.destinos__img(src="res/destinos/destino1.jpg", alt="Imagen Ejemplo")
+      .destinos__item__description
+        h1.destinos__item__title LOREM IPSUM DOLOR 
+        p.destinos__item__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque laudantium blanditiis aut similique culpa repudiandae iure corrupti, facere sed iusto debitis possimus dolore reprehenderit quas magni, delectus quo quidem neque!
+        a.destinos__button(href="#") Comprar 
+    .destinos__item
+      img.destinos__img(src="res/destinos/destino2.jpg", alt="Imagen Ejemplo")
+      .destinos__item__description
+        h1.destinos__item__title LOREM IPSUM DOLOR 
+        p.destinos__item__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque laudantium blanditiis aut similique culpa repudiandae iure corrupti, facere sed iusto debitis possimus dolore reprehenderit quas magni, delectus quo quidem neque!
+        a.destinos__button(href="#") Comprar 
+block clientes
+  .clientes 
+    h1.clientes__title NUESTROS CLIENTES 
+    .clientes__comentarios
+      - for(let i = 0 ; i < 3; i++)
+        .comentario
+          .comentario__persona
+            img.persona__imagen(src="res/clientes/face.jpg", alt="Persona") 
+            p.comentario__persona__nombre Edgar Treloar
+          .comentario__contenido
+            .stars
+              - for(let i = 0 ; i<4 ; i++)
+                img(src="res/star.svg", alt="Estrella")
+            p.text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ullam recusandae voluptas incidunt, officiis quia minus voluptates itaque dicta facilis? Et at ea nemo quia repellat atque id vitae cupiditate.

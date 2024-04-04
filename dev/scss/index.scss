@@ -7,3 +7,15 @@
 html {
   font-family: sans-serif;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  height: 100%;
+}
+
+@import "blocks/variables.scss";
