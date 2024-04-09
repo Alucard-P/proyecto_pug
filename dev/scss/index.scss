@@ -14,8 +14,20 @@ body {
   flex-direction: column;
 }
 
+.max {
+  width: 100%;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 img {
   height: 100%;
 }
 
 @import "blocks/variables.scss";
+@import "blocks/header.scss";
+@import "blocks/banner.scss";
+@import "blocks/nosotros.scss";
+@import "blocks/destinos.scss";
+@import "blocks/clientes.scss";
