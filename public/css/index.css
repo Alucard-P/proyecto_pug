@@ -335,3 +335,35 @@ img {
 .comentario__contenido .text {
   color: #fff;
 }
+
+.foo {
+  background: #272727;
+}
+
+.footer {
+  width: 100%;
+  color: #95989a;
+  height: 10em;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: auto;
+}
+.footer__name {
+  text-transform: uppercase;
+}
+@media screen and (max-width: 500px) {
+  .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
