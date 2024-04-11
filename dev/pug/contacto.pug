@@ -1,0 +1,15 @@
+extends ../templates/template
+block append config
+  - pagina_actual = "contacto"
+  - page_title = "Contacto"
+
+block contacto 
+  .contacto
+    h1.contacto__title CONTACTO
+    .social
+      a.social__item(href="#"): img(src="res/social/facebook.png", alt="facebook") 
+      a.social__item(href="#"): img(src="res/social/instagram.png", alt="instagram") 
+      a.social__item(href="#"): img(src="res/social/linkedin.png", alt="linkedin") 
+      a.social__item(href="#"): img(src="res/social/mail.png", alt="mail") 
+      a.social__item(href="#"): img(src="res/social/twitter.png", alt="twitter") 
+    p.leyenda Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim perferendis mollitia nam recusandae, ab vel necessitatibus. Aspernatur obcaecati accusantium nesciunt facere asperiores aperiam, quibusdam officiis error, aut placeat soluta laboriosam.

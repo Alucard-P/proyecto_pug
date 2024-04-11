@@ -209,6 +209,30 @@ img {
   }
 }
 
+.contacto__title {
+  text-align: center;
+  margin: 1em 0 0.5em;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 500px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 auto 1em;
+}
+.social__item {
+  width: 80px;
+  height: 80px;
+  margin: 0 0.5em;
+}
+
+.leyenda {
+  margin: 1em;
+}
+
 .destinos_elegidos {
   margin: 2em auto 0;
   padding: 0 1em;
